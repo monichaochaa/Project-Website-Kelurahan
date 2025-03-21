@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @vite(['resources/css/app.css','resources/js/app.js'])
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="bg-white p-6 rounded-lg shadow-lg w-80">

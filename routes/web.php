@@ -4,9 +4,10 @@ use App\Models\Menu;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $latestPosts = Post::latest()->take(5)->get();
@@ -89,21 +90,29 @@ Route::middleware(['auth'])->group(function () {
     })->name('admin.blog');
 
     // Tambah Berita
+    Route::get('/admin/posts/add', function () {
+        // $categories =  DB::table('categories')->get();
+        // dd($categories);// Ambil semua kategori dari database
+        $posts = Post::all(); // Ambil semua berita
+        return view('admin.blog', with('categories', 'posts'));
+    })->name('admin.posts.add');
+
     Route::post('/admin/posts/add', function (Request $request) {
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'category' => 'required|string',
+            'category_id' => 'required|exists:categories,id', // Pastikan ini menggunakan ID, bukan string
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
+    
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('public/images');
         }
-
+    
         Post::create($data);
+        
         return redirect()->route('admin.blog')->with('success', 'Berita berhasil ditambahkan!');
-    })->name('admin.posts.add');
+    });
 
     // Edit Berita
     Route::get('/admin/posts/edit/{post}', fn(Post $post) => view('admin.edit', compact('post')))
