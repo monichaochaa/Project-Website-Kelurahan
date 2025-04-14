@@ -21,14 +21,14 @@ Website Kelurahan Taman adalah platform informasi resmi yang digunakan untuk men
   - Hapus berita
   - Tampilkan daftar berita ke publik
 
-## ⚙️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 - Laravel 11
 - PHP 8.4.3
 - Blade Template Engine
 - Tailwind CSS
 
-## 🛠️ Cara Install & Menjalankan Project
+## Cara Install & Menjalankan Project
 
 ```bash
 # Clone repo
@@ -47,3 +47,11 @@ php artisan migrate
 
 # Jalankan server lokal
 php artisan serve
+```
+## Catatan
+
+- Pastikan .env sudah diatur untuk koneksi database
+- Gunakan php artisan migrate:fresh --seed jika ingin reset database dengan data awal
+- Jika nanti akan ditambahkan API (untuk mobile, misalnya), dokumentasi endpoint akan ditambahkan di bagian ini
+
+
