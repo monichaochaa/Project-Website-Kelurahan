@@ -52,6 +52,5 @@ php artisan serve
 
 - Pastikan .env sudah diatur untuk koneksi database
 - Gunakan php artisan migrate:fresh --seed jika ingin reset database dengan data awal
-- Jika nanti akan ditambahkan API (untuk mobile, misalnya), dokumentasi endpoint akan ditambahkan di bagian ini
 
 
