@@ -65,7 +65,7 @@
                 <a href="#" class="text-black font-semibold hover:underline hover:text-blue-700"> Bantuan </a>
             </li>
             <li class="border-b border-gray-300 p-2">
-                <a href="#" class="text-black font-semibold hover:underline hover:text-blue-700"> Berita </a>
+                <a href="/posts" class="text-black font-semibold hover:underline hover:text-blue-700"> Berita </a>
             </li>
             <li class="border-b border-gray-300 p-2">
                 <a href="#" class="text-black font-semibold hover:underline hover:text-blue-700"> Cinta Statistik </a>
